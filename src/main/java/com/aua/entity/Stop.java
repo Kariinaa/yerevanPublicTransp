@@ -1,6 +1,8 @@
 package com.aua.entity;
 
 //Lilit was here
+//ASDF
+
 public class Stop {
     long id;
     double lng;
