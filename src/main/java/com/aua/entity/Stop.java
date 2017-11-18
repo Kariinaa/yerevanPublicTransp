@@ -1,5 +1,6 @@
 package com.aua.entity;
 
+//Lilit was here
 public class Stop {
     long id;
     double lng;
