@@ -1,17 +1,26 @@
 package com.aua.entity;
 
-//Lilit was here
-//so was Anna
-//ASDF
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Set;
 
-public class Stop {
-    long id;
-    double lng;
-    double lat;
+@Entity
+@Table(name = "user")
+public class Stop implements Serializable {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "longitude", nullable = false)
+    private double lng;
+    @Column(name = "latitude", nullable = false)
+    private double lat;
+    private Set<Vehicle> vehicles;
 
-    public Stop(double lng, double lat) {
+    public Stop(double lng, double lat, Set<Vehicle> vehicles) {
         this.lng = lng;
         this.lat = lat;
+        this.vehicles = vehicles;
     }
 
     public long getId() {
@@ -36,5 +45,13 @@ public class Stop {
 
     public void setLat(double lat) {
         this.lat = lat;
+    }
+
+    public Set<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(Set<Vehicle> vehicles) {
+        this.vehicles = vehicles;
     }
 }

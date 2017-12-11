@@ -6,13 +6,14 @@ import javax.persistence.*;
 @Table(name = "user")
 public class User {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "password_hash", nullable = false)
+    @Column(name = "pass_hash", nullable = false)
     private int passwordHash;
 
     public User(String email, int passwordHash) {
